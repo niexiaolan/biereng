@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/order/order",
+    "pages/price/price",
+    "pages/deal/deal",
+    "pages/mine/mine"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#63CC5B",
+    "backgroundColor": "#F8F8F8",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "static/icon/home.png",
+        "selectedIconPath": "static/icon/home-chioced.png"
+      },
+      {
+        "text": "报价",
+        "pagePath": "pages/price/price",
+        "iconPath": "static/icon/price.png",
+        "selectedIconPath": "static/icon/price-chioced.png"
+      },
+      {
+        "text": "订单",
+        "pagePath": "pages/order/order",
+        "iconPath": "static/icon/order.png",
+        "selectedIconPath": "static/icon/order-chioced.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/mine/mine",
+        "iconPath": "static/icon/mine.png",
+        "selectedIconPath": "static/icon/mine-chioced.png"
+      }
+    ],
+    "midButton": {
+      "width": "80px",
+      "height": "80px",
+      "text": "下单",
+      "iconPath": "static/icon/deal.png",
+      "iconWidth": "40PX"
+    }
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap98.json"
+}
