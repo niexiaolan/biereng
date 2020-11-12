@@ -14,6 +14,7 @@
     "enablePullDownRefresh": true
   },
   "tabBar": {
+    "selectedColor": "#63CC5B",
     "list": [
       {
         "text": "首页",
@@ -48,6 +49,5 @@
       "iconWidth": "40PX"
     }
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap98.json"
+  "usingComponents": {}
 }
