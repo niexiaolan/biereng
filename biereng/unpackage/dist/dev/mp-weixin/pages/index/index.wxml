@@ -1,1 +1,1 @@
-<view class="content"><view class="iconfont icon-location"></view></view>
+<view class="content"><view class="iconfont icon-location"><text>海南大学</text><icon class="iconfont icon-triangledownfill"></icon></view><view class="home"><swiper indicator-dots="{{true}}" circular="{{true}}"><swiper-item><image src="../../static/images/banner1.jpg"></image></swiper-item><swiper-item><image src="../../static/images/banner.jpg"></image></swiper-item></swiper></view></view>
