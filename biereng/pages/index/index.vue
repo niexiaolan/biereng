@@ -1,7 +1,8 @@
 <template>
+	<view>
 	<view class="content">
 		<view class="iconfont icon-location"><text>海南大学</text> <icon class="iconfont icon-triangledownfill"></icon></view>
-		<view class="home">
+		<view class="home flex solid-bottom padding justify-center">
 		<swiper indicator-dots circular >
 			
 		    <swiper-item>
@@ -12,6 +13,7 @@
 		    </swiper-item>
 		</swiper>      
 			  </view>
+	</view>
 	</view>
 	
 </template>
@@ -57,6 +59,7 @@
 			image{
 				height: 100%;
 				width: 100%;
+				position: relative;
 			}
 		}
 	
