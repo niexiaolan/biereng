@@ -1,58 +1,56 @@
-{
+{"easycom": {
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	
+	{
+	    "path" : "pages/login/login",
+	    "style" :                                                                                    
+	    {
+	        "navigationBarTitleText": "登录"
+			}
+	},
 		{
-			
 			"path": "pages/index/index",
 			"style" :
 			{
-			    "navigationBarTitleText": "首页",
-			    "enablePullDownRefresh": false
+			    "navigationBarTitleText": "首页"
 			}
 		},
 		{
-            "path" : "pages/order/order",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "订单",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
             "path" : "pages/price/price",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "报价",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
+                "navigationBarTitleText": "报价"
+            }  
+        },
+		{
             "path" : "pages/deal/deal",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "下单",
-                "enablePullDownRefresh": false
+                "navigationBarTitleText": "下单"
             }
-            
-        }
-        ,{
+        },
+		{
+		    "path" : "pages/order/order",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "订单"
+		    }
+		    
+		},
+		{
             "path" : "pages/mine/mine",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "我的",
-                "enablePullDownRefresh": false
-            }
+                "navigationBarTitleText": "我的"
+				}
 		}
-            
-        
-        
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarBackgroundColor": "#63CC5B",
-		"backgroundColor": "#F8F8F8",
-		"enablePullDownRefresh":true
+		"backgroundColor": "#F8F8F8"
 	},
 	"tabBar":{
 		"selectedColor":"#63CC5B",
@@ -81,14 +79,7 @@
 				"iconPath":"static/icon/mine.png",
 				"selectedIconPath":"static/icon/mine-chioced.png"
 			}
-			
-		],
-		"midButton":{
-			"width":"80px",
-			"height":"80px",
-			"text":"下单",
-			"iconPath":"static/icon/deal.png",
-			"iconWidth":"40PX"
-		}
+		]
+	
 	}
 }

@@ -10457,7 +10457,42 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   indexListSticky: 965 };exports.default = _default;
 
 /***/ }),
-/* 40 */,
+/* 40 */
+/*!***************************************!*\
+  !*** D:/biereng/biereng/until/api.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.myRequest = void 0;var BASE_URL = 'http://localhost:8081';
+
+var myRequest = function myRequest(options) {
+  return new Promise(function (resolve, reject) {
+    uni.request({
+      url: BASE_URL + options.url,
+      method: options.method || 'GET',
+      data: options.data || {},
+      success: function success(res) {
+        if (res.data.code !== 0) {
+          return uni.showToast({
+            title: '获取数据失败' });
+
+        }
+        resolve(res);
+      },
+      fail: function fail(err) {
+        uni.showToast({
+          title: '请求接口失败' });
+
+        reject(err);
+      } });
+
+  });
+};exports.myRequest = myRequest;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
 /* 41 */,
 /* 42 */,
 /* 43 */,
@@ -10489,7 +10524,22 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 69 */,
 /* 70 */,
 /* 71 */,
-/* 72 */
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */
 /*!***************************************!*\
   !*** D:/biereng/biereng/api/about.js ***!
   \***************************************/
@@ -10497,8 +10547,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.getMe = getMe;exports.getWebConfig = getWebConfig;var _request = __webpack_require__(/*! ../utils/request.js */ 73);
-var _config = __webpack_require__(/*! ../config/config.js */ 74);
+Object.defineProperty(exports, "__esModule", { value: true });exports.getMe = getMe;exports.getWebConfig = getWebConfig;var _request = __webpack_require__(/*! ../utils/request.js */ 88);
+var _config = __webpack_require__(/*! ../config/config.js */ 89);
 
 function getMe(params) {
   return _request.request.get(_config.appConfig.WEB_API + '/about/getMe', params);
@@ -10510,7 +10560,7 @@ function getWebConfig(params) {
 }
 
 /***/ }),
-/* 73 */
+/* 88 */
 /*!*******************************************!*\
   !*** D:/biereng/biereng/utils/request.js ***!
   \*******************************************/
@@ -10518,8 +10568,8 @@ function getWebConfig(params) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.request = void 0;var _config = __webpack_require__(/*! ../config/config.js */ 74);
-var _token = __webpack_require__(/*! ./token */ 75);
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.request = void 0;var _config = __webpack_require__(/*! ../config/config.js */ 89);
+var _token = __webpack_require__(/*! ./token */ 90);
 
 var send = function send(url) {var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};var method = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'POST';var showLoading = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
   uni.showLoading({
@@ -10559,7 +10609,7 @@ var request = {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 74 */
+/* 89 */
 /*!*******************************************!*\
   !*** D:/biereng/biereng/config/config.js ***!
   \*******************************************/
@@ -10585,7 +10635,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.appConfig 
 };exports.appConfig = appConfig;
 
 /***/ }),
-/* 75 */
+/* 90 */
 /*!*****************************************!*\
   !*** D:/biereng/biereng/utils/token.js ***!
   \*****************************************/
@@ -10593,7 +10643,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.appConfig 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.tokenUtil = void 0;var _config = __webpack_require__(/*! ../config/config.js */ 74);
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.tokenUtil = void 0;var _config = __webpack_require__(/*! ../config/config.js */ 89);
 
 var tokenUtil = {
   set: function set(s) {

@@ -4,7 +4,7 @@
 }
 .UCenter-bg {
 	color: #FFFFFF;
-	background-color:#63CC5B ;
+	background-color: #63CC5B;
 	background-size: cover;
 	height: 350rpx;
 	display: -webkit-box;
