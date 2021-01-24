@@ -8,7 +8,21 @@
 			<swiper class="swiper-box" :current="swiperCurrent" @transition="transition" @animationfinish="animationfinish">
 				<!-- 全部订单 -->
 				<swiper-item class="swiper-item">
-					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
+					<scroll-view scroll-y style="height: 100%;width: 100%;">
+						<view class="page-box">
+							<view>
+								<view class="centre">
+									
+									<view class="explain">
+										您还没有相关的订单
+										
+									</view>
+									<view class="btn">现在下单</view>
+								</view>
+							</view>
+						</view>
+					</scroll-view>
+				<!-- 	<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
 						<view class="page-box">
 							<view class="order" v-for="(res, index) in orderList[0]" :key="res.id">
 								<view class="top">
@@ -54,11 +68,25 @@
 							</view>
 							<u-loadmore :status="loadStatus[0]" bgColor="#f2f2f2"></u-loadmore>
 						</view>
-					</scroll-view>
+					</scroll-view> -->
 				</swiper-item>
 				<!-- 待回收 -->
 				<swiper-item class="swiper-item">
-					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
+					<scroll-view scroll-y style="height: 100%;width: 100%;">
+						<view class="page-box">
+							<view>
+								<view class="centre">
+									
+									<view class="explain">
+										您还没有相关的订单
+										
+									</view>
+									<view class="btn">现在下单</view>
+								</view>
+							</view>
+						</view>
+					</scroll-view>
+				<!-- 	<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
 						<view class="page-box">
 							<view class="order" v-for="(res, index) in  orderList[1]" :key="res.id">
 								<view class="top">
@@ -104,7 +132,7 @@
 							</view>
 							<u-loadmore :status="loadStatus[1]" bgColor="#f2f2f2"></u-loadmore>
 						</view>
-					</scroll-view>
+					</scroll-view> -->
 				</swiper-item>
 				<!-- 已完成 -->
 				<swiper-item class="swiper-item">
@@ -125,7 +153,21 @@
 				</swiper-item>
 				<!-- 待评价 -->
 				<swiper-item class="swiper-item">
-					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
+					<scroll-view scroll-y style="height: 100%;width: 100%;">
+						<view class="page-box">
+							<view>
+								<view class="centre">
+									
+									<view class="explain">
+										您还没有相关的订单
+										
+									</view>
+									<view class="btn">现在下单</view>
+								</view>
+							</view>
+						</view>
+					</scroll-view>
+					<!-- <scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
 						<view class="page-box">
 							<view class="order" v-for="(res, index) in  orderList[3]" :key="res.id">
 								<view class="top">
@@ -172,7 +214,7 @@
 							<u-loadmore :status="loadStatus[3]" bgColor="#f2f2f2"></u-loadmore>
 						</view>
 					</scroll-view>
-				</swiper-item>
+			 -->	</swiper-item>
 			</swiper>
 		</view>
 

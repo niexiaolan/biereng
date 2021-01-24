@@ -71,10 +71,25 @@
 		},
 		methods: {
 			async getPrice() {
-				const res = await this.$myRequest({
-					url: '/rubbish/getList'
+				const res = await uni.request({
+					url: 'http://localhost:8081/rubbish/getList',
+					success: (res) => {
+						console.log(res)
+						if (res.data.code != 0) {
+							return uni.showToast({
+								title:'获取数据失败'
+							})
+						}
+						this.navs = res.data.data
+					},
+					fail: (err) => {
+						uni.showToast({
+							title:'请求接口失败'
+						})
+						reject(err)
+					}
 				});
-				this.navs = res.data.data
+				
 			}
 		}
 	}

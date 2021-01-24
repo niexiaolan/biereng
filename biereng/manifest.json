@@ -75,5 +75,24 @@
     },
     "uniStatistics" : {
         "enable" : false
-    }
+    },
+	"h5": {
+	        "devServer": {
+	            "disableHostCheck": true,
+	            "proxy": {
+	                "/api1": {
+	                    "target": "http://localhost:8081",
+	                    "changeOrigin": true,
+	                    "secure": false,
+	                    "pathRewrite":{"^/api1":""}
+	                },
+					"/api2": {
+					    "target": "http://localhost:8011",
+					    "changeOrigin": true,
+					    "secure": false,
+					    "pathRewrite":{"^/api2":""}
+					}
+	            }
+	        }
+	    }
 }

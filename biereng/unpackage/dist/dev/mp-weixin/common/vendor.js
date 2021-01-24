@@ -10465,8 +10465,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.myRequest = void 0;var BASE_URL = 'http://localhost:8081';
-
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.myRequest2 = exports.myRequest = void 0;var BASE_URL = "http://localhost:8011";
 var myRequest = function myRequest(options) {
   return new Promise(function (resolve, reject) {
     uni.request({
@@ -10490,171 +10489,29 @@ var myRequest = function myRequest(options) {
 
   });
 };exports.myRequest = myRequest;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */,
-/* 52 */,
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */,
-/* 85 */,
-/* 86 */,
-/* 87 */
-/*!***************************************!*\
-  !*** D:/biereng/biereng/api/about.js ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.getMe = getMe;exports.getWebConfig = getWebConfig;var _request = __webpack_require__(/*! ../utils/request.js */ 88);
-var _config = __webpack_require__(/*! ../config/config.js */ 89);
-
-function getMe(params) {
-  return _request.request.get(_config.appConfig.WEB_API + '/about/getMe', params);
-}
-
-// 获取网站配置
-function getWebConfig(params) {
-  return _request.request.get(_config.appConfig.WEB_API + '/index/getWebConfig', params);
-}
-
-/***/ }),
-/* 88 */
-/*!*******************************************!*\
-  !*** D:/biereng/biereng/utils/request.js ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.request = void 0;var _config = __webpack_require__(/*! ../config/config.js */ 89);
-var _token = __webpack_require__(/*! ./token */ 90);
-
-var send = function send(url) {var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};var method = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'POST';var showLoading = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
-  uni.showLoading({
-    title: '加载中' });
-
-  return new Promise(function (resolve) {
+var myRequest2 = function myRequest2(options) {
+  return new Promise(function (resolve, reject) {
     uni.request({
-      method: method,
-      url: url,
-      data: data,
-      header: function () {
-        var tokeValue = _token.tokenUtil.get();
-        var config = {
-          // 'Content-Type': 'application/x-www-form-urlencoded'
-          'Content-Type': 'application/json' };
-
-        if (tokeValue) {
-          config[_config.appConfig.tokenKey] = tokeValue;
-        }
-        return config;
-      }(),
+      url: options.url,
+      method: options.method || 'GET',
+      data: options.data || {},
       success: function success(res) {
-        uni.hideLoading();
-        resolve(res.data);
+        if (res.data.code !== 0) {
+          return uni.showToast({
+            title: '获取数据失败' });
+
+        }
+        resolve(res);
+      },
+      fail: function fail(err) {
+        uni.showToast({
+          title: '请求接口失败' });
+
+        reject(err);
       } });
 
   });
-};
-
-var request = {
-  get: function get(url, data) {
-    return send(url, data, 'GET');
-  },
-  post: function post(url, data) {
-    return send(url, data, 'POST');
-  } };exports.request = request;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 89 */
-/*!*******************************************!*\
-  !*** D:/biereng/biereng/config/config.js ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.appConfig = void 0;var appConfig = {
-
-  tokenKey: 'Authorization',
-
-  // 开发环境
-  WEB_API: 'http://localhost:8603',
-  PICTURE_API: 'http://localhost:8602'
-
-  // 演示环境
-  // WEB_API: 'http://120.78.126.96:8603',
-  // PICTURE_API: 'http://120.78.126.96:8602',
-
-  // 正式环境
-  // WEB_API: 'https://apiweb.moguit.cn',
-  // PICTURE_API: 'https://apipicture.moguit.cn',
-};exports.appConfig = appConfig;
-
-/***/ }),
-/* 90 */
-/*!*****************************************!*\
-  !*** D:/biereng/biereng/utils/token.js ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.tokenUtil = void 0;var _config = __webpack_require__(/*! ../config/config.js */ 89);
-
-var tokenUtil = {
-  set: function set(s) {
-    uni.setStorageSync(_config.appConfig.tokenKey, s);
-  },
-  get: function get() {
-    return uni.getStorageSync(_config.appConfig.tokenKey);
-  },
-  clear: function clear() {
-    uni.removeStorageSync(_config.appConfig.tokenKey);
-  } };exports.tokenUtil = tokenUtil;
+};exports.myRequest2 = myRequest2;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })
